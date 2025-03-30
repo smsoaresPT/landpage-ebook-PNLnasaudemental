@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PNL Aplicado à Saúde Mental</title>
+  <!-- Importação de fontes modernas do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- CSS interno -->
+  <style>
+    /* Reset básico e configurações globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      /* Fundo texturizado com imagem relacionada à saúde mental */
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #444;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header com efeito Parallax e overlay gradiente */
+    header {
+      position: relative;
+      height: 100vh;
+      /* Imagem de fundo relacionada à PNL e saúde mental */
+      background: url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(74,144,226,0.6));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease-out;
+    }
+    .hero-content h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    .cta-button {
+      background-color: #4a90e2;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .cta-button:hover {
+      background-color: #357ab7;
+      transform: translateY(-3px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Seção de Benefícios com Cards */
+    .features {
+      padding: 80px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .feature-item {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      max-width: 320px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .feature-item i {
+      font-size: 3rem;
+      color: #4a90e2;
+      margin-bottom: 15px;
+    }
+    .feature-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .feature-item p {
+      font-size: 1rem;
+      color: #666;
+    }
+    /* Seção de Download com Formulário Simples */
+    #download {
+      padding: 80px 20px;
+      background: linear-gradient(to right, #4a90e2, #357ab7);
+      color: #fff;
+      text-align: center;
+    }
+    #download h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    #download p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .download-form input[type="email"] {
+      padding: 15px;
+      width: 300px;
+      max-width: 80%;
+      border: none;
+      border-radius: 50px;
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+    .download-form input[type="submit"] {
+      background-color: #fff;
+      color: #357ab7;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .download-form input[type="submit"]:hover {
+      background-color: #e6e6e6;
+      transform: translateY(-2px);
+    }
+    /* Seção Sobre o Autor */
+    .author {
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      text-align: center;
+    }
+    .author h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .author p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    /* Footer elegante com nota académica */
+    footer {
+      background-color: #333;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    footer .academic-note {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 10px;
+    }
+    @media(max-width: 768px) {
+      .hero-content h1 { font-size: 2.8rem; }
+      .hero-content p { font-size: 1rem; }
+      .features { padding: 60px 10px; }
+      #download h2 { font-size: 2.2rem; }
+      .author h2 { font-size: 2rem; }
+    }
+  </style>
+  <!-- Font Awesome para ícones -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Seção Hero -->
+  <header>
+    <div class="hero-content">
+      <h1>PNL Aplicado à Saúde Mental</h1>
+      <p>Transforme a sua mente e alcance o equilíbrio emocional com técnicas comprovadas de Programação Neurolinguística.</p>
+      <a href="#download" class="cta-button">Descarregar eBook</a>
+    </div>
+  </header>
+
+  <!-- Seção de Benefícios -->
+  <section class="features">
+    <div class="feature-item">
+      <i class="fas fa-brain"></i>
+      <h3>Conteúdo Exclusivo</h3>
+      <p>Técnicas avançadas para reprogramar padrões mentais e promover o bem-estar.</p>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-user-md"></i>
+      <h3>Abordagem Profissional</h3>
+      <p>Ideal para interessados no estudo do comportamento humano.</p>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-book-open"></i>
+      <h3>Prático e Aplicável</h3>
+      <p>Ferramentas que você pode utilizar no seu dia a dia para transformar a sua vida.</p>
+    </div>
+  </section>
+
+  <!-- Seção de Download -->
+  <section id="download">
+    <h2>Obtenha o seu eBook Gratuito</h2>
+    <p>Insira o seu email abaixo e receba imediatamente o exemplar gratuito deste eBook que vai revolucionar a sua forma de ver a saúde mental.</p>
+    <form class="download-form" action="#" method="post">
+      <input type="email" name="email" placeholder="Digite o seu email" required>
+      <input type="submit" value="Receber Agora">
+    </form>
+  </section>
+
+  <!-- Seção Sobre o Autor -->
+  <section class="author">
+    <h2>Sobre o Autor</h2>
+    <p>Sérgio Soares é formando num curso de comunicação e serviço digital e este ebook é resultado de uma pesquisa sobre a programação neurolinguística e a sua aplicação na saúde mental.</p>
+  </section>
+
+  <!-- Footer com nota académica -->
+  <footer>
+    <p>&copy; 2025 PNL Aplicado à Saúde Mental. Todos os direitos reservados.</p>
+    <p class="academic-note">Trabalho académico - Este eBook foi desenvolvido como parte de um projeto de pesquisa.</p>
+  </footer>
+</body>
+</html>
